@@ -13,18 +13,23 @@ public class Card : MonoBehaviour
 
     public TMP_Text healthText, attackText, costText, nameText, actionDescriptionText, loreText;
 
-    public Image characterArt, bgArt;
+    public Image characterArt;
 
     private Vector3 targetPoint;
     private Quaternion targetRot;
     public float moveSpeed = 5f, rotateSpeed = 540f;
+
+    public bool inHand;
+    public int handPosition;
+
+    private HandController theHC;
+
     
     // Start is called before the first frame update
     void Start()
     {
         SetupCard();
-
-
+        theHC = FindObjectOfType<HandController>();
     }
 
     public void SetupCard()
@@ -42,7 +47,6 @@ public class Card : MonoBehaviour
         loreText.text = CardSO.cardLore;
 
         characterArt.sprite = CardSO.characterSprite;
-        bgArt.sprite = CardSO.bgSprite;
     }
 
     // Update is called once per frame
@@ -56,5 +60,21 @@ public class Card : MonoBehaviour
     {
         targetPoint = pointToMoveTo;
         targetRot = rotToMatch;
+    }
+
+    private void OnMouseOver()
+    {
+        if(inHand)
+        {
+            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, .5f), Quaternion.identity);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if(inHand)
+        {
+            MoveToPoint(theHC.cardPositions[handPosition], theHC.minPos.rotation);
+        }
     }
 }
