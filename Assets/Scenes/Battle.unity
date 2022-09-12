@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_isAlignmentEnumConverted: 1
@@ -2127,14 +2127,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 2
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_isAlignmentEnumConverted: 1
@@ -2168,7 +2168,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -120.96748}
+  m_margin: {x: 0, y: 0, z: 31.420103, w: -120.96748}
   m_textInfo:
     textComponent: {fileID: 1894911572}
     characterCount: 15
@@ -2510,6 +2510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2032480523}
+  - component: {fileID: 2032480524}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -2532,6 +2533,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2032480524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032480522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2bf46a8332b0c408415698a54870a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardSO: {fileID: 11400000, guid: 0fb7a45e6d619b54dbf63f7fb666d8e2, type: 2}
+  currentHealth: 2
+  attackPower: 1
+  manaCost: 3
+  healthText: {fileID: 1519563340}
+  attackText: {fileID: 1968128087}
+  costText: {fileID: 792725681}
+  nameText: {fileID: 1348233139}
+  actionDescriptionText: {fileID: 1576638472}
+  loreText: {fileID: 1894911572}
 --- !u!4 &2161292222133190024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5605057645780472167, guid: 5afb4762158628c448d04fa438524321, type: 3}
